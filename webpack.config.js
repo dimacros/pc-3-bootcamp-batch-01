@@ -11,10 +11,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: 'body',
       title: "Interacting with smart contract",
       template: "index.html",
     }),
   ],
+  resolve: {
+    extensions: [".js", ".json"],
+  },
   output: {
     filename: "[name].bundle.js",
     clean: true,

@@ -4,14 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <title>
-        <%= htmlWebpackPlugin.options.title %>
+        Interacting with smart contract
     </title>
-</head>
+<script defer src="main.bundle.js"></script></head>
 
 <body>
     <div>
         <button id="connect">Conectar con Metamask</button>
-        <span id="walletStatus">Disconected</span>
     </div>
     </br>
     <div>
@@ -21,12 +20,12 @@
     </br>
     <h2>Balances</h2>
     <div>
-        <label>USD Coin Balance:</label>
+        <label for="usdcBalance">USD Coin Balance:</label>
         <span id="usdcBalance"></span>
         <button id="usdcUpdate">Refresh</button>
     </div>
     <div>
-        <label>Mi Primer Token Balance:</label>
+        <label for="miPrimerTknBalance">Mi Primer Token Balance:</label>
         <span id="miPrimerTknBalance"></span>
         <button id="miPrimerTknUpdate">Refresh</button>
     </div>
@@ -52,23 +51,24 @@
 
     </br>
     <div>
-        <label>Purchase Nft (with Ether)</label>
+        <label for="purchaseEthInput">Purchase Nft (with Ether)</label>
         <button id="purchaseEthButton">Purchase with Ether</button>
         <span id="purchaseEthError" style="color: red;"></span>
     </div>
 
     </br>
     <div>
-        <label>Send Ether to Contract</label>
+        <label for="sendEtherInput">Send Ether to Contract</label>
         <button id="sendEtherButton">Send</button>
         <span id="sendEtherError" style="color: red;"></span>
     </div>
 
     <h2> NFT Contract (Polygon) </h2>
     </br>
-    <ul id="nftList">
+    <div id="nftList">
 
-    </ul>
+    </div>
+
 </body>
 
 </html>

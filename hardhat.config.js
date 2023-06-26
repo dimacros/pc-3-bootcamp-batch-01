@@ -8,14 +8,14 @@ module.exports = {
   networks: {
     mumbai: {
       url: process.env.MUMBAI_TESNET_URL,
-      accounts: [process.env.ADMIN_ACCOUNT_PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY],
       timeout: 0,
       gas: "auto",
       gasPrice: "auto",
     },
     goerli: {
       url: process.env.GOERLI_TESNET_URL,
-      accounts: [process.env.ADMIN_ACCOUNT_PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY],
       timeout: 0,
       gas: "auto",
       gasPrice: "auto",

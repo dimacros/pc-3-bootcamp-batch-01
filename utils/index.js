@@ -22,7 +22,7 @@ async function verify(implementation, contractName, arguments = []) {
   try {
     await hre.run("verify:verify", {
       address: implementation,
-      constructorArguments: [...arguments],
+      constructorArguments: arguments,
     });
   } catch (e) {
     if (e.message.includes("Contract source code already verified"))
@@ -44,6 +44,7 @@ async function deploySC(contractName, args = []) {
   var smartContract = await gcf(contractName);
   var proxyContract = await dp(smartContract, [...args], {
     kind: "uups",
+    unsafeAllow: ["delegatecall"],
   });
   if (process.env.HARDHAT_NETWORK) {
     var tx = await proxyContract.deployed();
@@ -55,7 +56,7 @@ async function deploySC(contractName, args = []) {
 
 async function deploySCNoUp(contractName, args = []) {
   var SmartContract = await gcf(contractName);
-  var smartContract = await SmartContract.deploy([...args]);
+  var smartContract = await SmartContract.deploy(...args);
 
   // true cuando se usa '--network matic' en el script de deployment
   if (process.env.HARDHAT_NETWORK) {

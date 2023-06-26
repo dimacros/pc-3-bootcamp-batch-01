@@ -1,7 +1,9 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "start": "webpack server --open"
+    "start": "webpack server",
+    "deploy:mumbai": "hardhat run --network mumbai scripts/deployInMumbai.js",
+    "deploy:goerli": "hardhat run --network goerli scripts/deployInGoerli.js"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
